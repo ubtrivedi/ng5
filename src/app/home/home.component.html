@@ -1,0 +1,17 @@
+<h1>
+  Life Goals
+</h1>
+
+<div>
+  <input type="text" placeholder="Enter your goal here..." [(ngModel)]="currentGoal">
+  <br>
+  <input type="button" [value]=btnText (click)="addGoal()">
+</div>
+
+
+<div>
+  <p>Your goals so far are listed below (Total {{getNumGoals()}} goals)</p>
+  <ul *ngFor="let goal of goals; let i = index" (click)="removeGoal(i)">
+    <li>{{goal}}</li>
+  </ul>
+</div>
